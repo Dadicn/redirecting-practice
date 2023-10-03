@@ -27,7 +27,6 @@ export class UnsavedChangesPageComponent
       const dialogRef = this.dialog.open(ExampleDialogComponent);
       return dialogRef.afterClosed();
     }
-
     return true;
   }
 
