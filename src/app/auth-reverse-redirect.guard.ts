@@ -1,16 +1,18 @@
-import { Injectable } from "@angular/core";
-import { CanDeactivate } from "@angular/router";
+import { Injectable } from '@angular/core';
+import { CanDeactivate } from '@angular/router';
+import { Observable } from 'rxjs';
 
 export interface CanComponentDeactivate {
-    canDeactivate: () => boolean;
+    canDeactivate: () => boolean | Observable<boolean>;
 }
 
 @Injectable()
-export class AuthGuardReverseRedirect implements CanDeactivate<CanComponentDeactivate>{
+export class AuthGuardReverseRedirect
+  implements CanDeactivate<CanComponentDeactivate>
+{
+  constructor() {}
 
-    constructor() {}
-
-    canDeactivate(component: CanComponentDeactivate): boolean {
-           return component.canDeactivate ? component.canDeactivate() : true;
-    }
- }
+  canDeactivate(component: CanComponentDeactivate): boolean | Observable<boolean>  {
+    return component.canDeactivate ? component.canDeactivate() : true;
+  }
+}

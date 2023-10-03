@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>Leaving page</h2>
+<mat-dialog-content class="mat-typography">
+    <p>You have unsaved changes. Do you really want to leave?</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button (click)="confirmLeave(false)">No</button>
+    <button mat-button (click)="confirmLeave(true)" cdkFocusInitial>Yes</button>
+  </mat-dialog-actions>
