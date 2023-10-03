@@ -1,12 +1,16 @@
 import { Injectable } from "@angular/core";
-import { AuthService } from "./auth.service";
+import { CanDeactivate } from "@angular/router";
+
+export interface CanComponentDeactivate {
+    canDeactivate: () => boolean;
+}
 
 @Injectable()
-export class AuthGuardReverseRedirect {
+export class AuthGuardReverseRedirect implements CanDeactivate<CanComponentDeactivate>{
 
-    constructor(public auth: AuthService) {}
+    constructor() {}
 
-    canDeactivate(): boolean {
-        return this.auth.isCorrectSurname;     
+    canDeactivate(component: CanComponentDeactivate): boolean {
+           return component.canDeactivate ? component.canDeactivate() : true;
     }
  }
