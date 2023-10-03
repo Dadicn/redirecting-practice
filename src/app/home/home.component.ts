@@ -11,7 +11,9 @@ export class HomeComponent implements OnInit {
 
   constructor(private auth: AuthService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.auth.isCorrectName = false;
+  }
 
   public redirectUser(): void {
     if (this.myValue === 'Nikola') {

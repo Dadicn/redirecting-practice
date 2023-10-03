@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 @Injectable()
 export class AuthService { 
     isCorrectName = false;
+    isCorrectSurname = false;
 
     constructor(private router: Router) {}
     
@@ -11,5 +12,9 @@ export class AuthService {
     redirect(): void {
         this.isCorrectName = true;
         this.router.navigate(['/redirected'])
+    }
+
+    exit(): void {
+        this.isCorrectSurname = true;
     }
 }

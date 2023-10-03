@@ -1,0 +1,28 @@
+:host {
+    .header {
+        width: 100%;
+        height: 80px;
+        background-color: #17355b;
+
+        ul {
+            margin-top: 0px;
+            display: flex;
+
+        li {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 20px;
+            color: white;
+            list-style-type: none;
+            cursor: pointer;
+            padding: 10px;
+            border-right: 1px solid white;
+        }
+
+        li a {
+            color: white;
+            text-decoration: none;
+        }
+        }
+    }
+}
